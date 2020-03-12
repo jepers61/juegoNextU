@@ -100,12 +100,12 @@ div[class^='col']{
   align-items: center;
 
 }
-
+/*
 .elemento{
   width: 96px;
   height: 96px;
   visibility: hidden;
-}
+}*/
 
 .luz.on{
   color: #D9D9D9;/*color del texto al cambiar*/

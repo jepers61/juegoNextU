@@ -14,15 +14,6 @@ function caramelos(){
 		
 	}
 }*/
-var caramelo = aleatorio(1,4);
-
-function aleatorio(inferior, superior) {
-    var numPosibilidades = superior - inferior;
-    var aleat = Math.random() * numPosibilidades;
-    aleat = Math.floor(aleat);
-    return parseInt(inferior) + aleat;
-}
-
 
 $(document).ready(function(){
   (function() {
@@ -35,13 +26,11 @@ $(document).ready(function(){
       }
     },1000);
   }) ();
-
-	nuevoCaramelo();
+	comenzar();
 });
 
-function nuevoCaramelo(){
-	switch(caramelo){
-		case 1:
-			$(".col-1")
-	}
+function comenzar(){
+	var canvas = document.getElementById("canvas");
+	canvas = canvas.getContext("2d");
+	
 }
