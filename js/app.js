@@ -1,13 +1,16 @@
-/*var img = new Array;
-img[0]="image/1.png";
-img[1]="image/2.png";
-img[2]="image/3.png";
-img[3]="image/4.png";
 
+
+var img = new Array();
+img[0]="1.png";
+img[1]="2.png";
+img[2]="3.png";
+img[3]="4.png";
+
+	
 function rand(n){
 	return(Math.floor(Math.random()*n+1));
 }
-
+/*
 function caramelos(){
 	var renglon=document.querySelectorAll(img);
 	for(i=0;i<renglon.length;i++){
@@ -15,7 +18,7 @@ function caramelos(){
 	}
 }*/
 
-$(document).ready(function(){
+$(function(){
   (function() {
     setInterval(function(){
       var tit = document.getElementById('titulo');
@@ -26,11 +29,21 @@ $(document).ready(function(){
       }
     },1000);
   }) ();
-	comenzar();
+	var canvas = document.getElementById("tablero");
+	tablero = canvas.getContext("2d");
+	
+	$(".btn-reinicio").on("click",function(){
+	
+		comenzar();
+		
+	});
 });
 
 function comenzar(){
-	var canvas = document.getElementById("canvas");
-	canvas = canvas.getContext("2d");
-	
+	var imagen=new Image;
+	imagen.src="image/"+img[rand(4)-1]+"";
+	imagen.addEventListener("load", function(){
+		tablero.drawImage(imagen,1,1,90,30);
+	},false);
+
 }
